@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { mainFont, montserrat } from "../fonts/fonts";
+import { mainFont, montserrat } from "../../public/fonts/fonts";
 
 const Hero = () => {
   return (

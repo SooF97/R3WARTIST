@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { mainFont, montserrat } from "./fonts/fonts";
+import { mainFont, montserrat } from "../public/fonts/fonts";
 
 import { ethers } from "ethers";
 

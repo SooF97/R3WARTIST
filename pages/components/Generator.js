@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { mainFont, montserrat } from "../fonts/fonts";
+import { mainFont, montserrat } from "../../public/fonts/fonts";
 
 export default function Generator() {
   const [prompt, setPrompt] = useState("");

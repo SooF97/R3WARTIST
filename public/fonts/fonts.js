@@ -23,4 +23,4 @@ const mainFont = localFont({
   preload: true,
 });
 
-export default { inter, montserrat, heroFontBold, heroFontExtraBold, mainFont };
+export { heroFontBold, heroFontExtraBold, inter, mainFont, montserrat };

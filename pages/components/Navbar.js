@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 
-import { mainFont, montserrat } from "../fonts/fonts";
+import { mainFont, montserrat } from "../../public/fonts/fonts";
 
 import { ConnectWallet } from "@thirdweb-dev/react";
 
