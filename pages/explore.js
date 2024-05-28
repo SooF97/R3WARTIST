@@ -13,8 +13,12 @@ const explore = () => {
   async function fetchData() {
     setFetchingData(true);
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL
+      // const provider = new ethers.providers.JsonRpcProvider(
+      //   process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL
+      // );
+      const provider = new ethers.providers.StaticJsonRpcProvider(
+        process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL,
+        "sepolia"
       );
       const contract = new ethers.Contract(
         Prompts.address,
