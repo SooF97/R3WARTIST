@@ -31,9 +31,7 @@ const artistPage = () => {
   async function fetchArtistData() {
     setFetchingArtist(true);
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL
-      );
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(
         Prompts.address,
         Prompts.abi,
