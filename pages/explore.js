@@ -16,10 +16,11 @@ const explore = () => {
       // const provider = new ethers.providers.JsonRpcProvider(
       //   process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL
       // );
-      const provider = new ethers.providers.StaticJsonRpcProvider(
-        process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL,
-        "sepolia"
-      );
+      // const provider = new ethers.providers.StaticJsonRpcProvider(
+      //   process.env.NEXT_PUBLIC_ALCHEMY_RPC_URL,
+      //   "sepolia"
+      // );
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(
         Prompts.address,
         Prompts.abi,
