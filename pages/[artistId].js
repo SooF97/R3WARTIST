@@ -67,8 +67,9 @@ const artistPage = () => {
       const finalEthInUsd = ethInUsd / 100000000;
       const priceInEth = price / finalEthInUsd;
       const priceInWei = priceInEth * (1 * 10 ** 18);
+      console.log(priceInWei);
       const transaction = await contract.buyPrompt(artist, {
-        value: priceInWei,
+        value: parseInt(priceInWei),
       });
       await transaction.wait();
       console.log(transaction);
