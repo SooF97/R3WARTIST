@@ -1,0 +1,32 @@
+{
+    "address": "0x875BaBfDD9B4CDB64Ac6466fb22E3c925A112FD3",
+    "abi": [
+        "constructor()",
+        "error OnlyCoordinatorCanFulfill(address,address)",
+        "error OnlyOwnerOrCoordinator(address,address,address)",
+        "error ZeroAddress()",
+        "event CoordinatorSet(address)",
+        "event OwnershipTransferRequested(address indexed,address indexed)",
+        "event OwnershipTransferred(address indexed,address indexed)",
+        "function acceptOwnership()",
+        "function artistMapping(uint256) view returns (address,uint256,uint256,bool,uint256)",
+        "function artistsArray(uint256) view returns (address,uint256,uint256,bool,uint256)",
+        "function buyPrompt(uint256) payable",
+        "function fetchUserPrompts() view returns (string[])",
+        "function getAllArtists() view returns ((address,uint256,string[],string[],uint256,bool,uint256)[])",
+        "function getArtist(uint256) view returns ((address,uint256,string[],string[],uint256,bool,uint256))",
+        "function getChainlinkDataFeedLatestAnswer() view returns (int256)",
+        "function id() view returns (uint256)",
+        "function isArtistAlreadyRegistred(address) view returns (bool)",
+        "function isSubscribed(address,uint256) view returns (bool)",
+        "function owner() view returns (address)",
+        "function priceToUsd(uint256) view returns (uint256)",
+        "function rawFulfillRandomWords(uint256,uint256[])",
+        "function registerPrompts(string[],string[],uint256)",
+        "function s_contractOwner() view returns (address)",
+        "function s_vrfCoordinator() view returns (address)",
+        "function setCoordinator(address)",
+        "function transferOwnership(address)",
+        "function userMapping(address) view returns (address)"
+    ]
+}
