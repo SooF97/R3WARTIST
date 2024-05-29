@@ -17,14 +17,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="text-black py-4">
-      <div className="container mx-auto px-4">
-        <div className="flex  justify-between items-center">
-          {/* Logo Part */}
-          <div>
-            <Link
-              href="/"
-              className="flex flex-row justify-center items-center gap-2 "
+    <>
+      <header id="header" className="d-flex align-items-center fixed-top">
+        <div className="container d-flex align-items-center justify-content-between">
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <a
+              href="index.html"
+              className="logo"
+              style={{ marginRight: "10px" }}
             >
               <Image
                 src="/avatar_logo.jpg"
@@ -33,75 +33,77 @@ const Navbar = () => {
                 width={50}
                 height={50}
               />
-              <p className="text-xl md:text-2xl font-bold  bg-clip-text">
-                <span className={mainFont.className}>R3WARTIST</span>
-              </p>
-            </Link>
+            </a>
+            <h1 className="logo">
+              <a href="/">R3WARTIST</a>
+            </h1>
           </div>
 
-          {/* Navbar Menu */}
-          <div
-            className={`hidden text-lg md:flex space-x-4 ${montserrat.className}`}
-          >
-            <Link href="/" className="  hover:font-bold">
-              Home
-            </Link>
-            <Link href="/create" className="  hover:font-bold">
-              Create
-            </Link>
+          <nav id="navbar" className="navbar">
+            <ul>
+              <li>
+                <a href="/" className="nav-link scrollto">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/create" className="nav-link scrollto">
+                  Create
+                </a>
+              </li>
 
-            <Link href="/explore" className="  hover:font-bold">
-              Explore
-            </Link>
-            <Link href="/dashboard" className="  hover:font-bold">
-              Dashboard
-            </Link>
-          </div>
+              <li>
+                <a href="/explore" className="nav-link scrollto">
+                  Explore
+                </a>
+              </li>
 
-          {/* Login Button */}
+              <li>
+                <a href="/dashboard" className="nav-link scrollto">
+                  Dashboard
+                </a>
+              </li>
 
-          {/* <button className="hidden md:flex bg-gray-900 text-white py-3 px-6 rounded-md font-semibold shadow-md transform hover:scale-105 transition-all duration-300 ">
-                Launch App
-              </button> */}
-          <div className="hidden md:block">
-            <ConnectWallet
-              btnTitle="Sign in"
-              className=" py-3 px-6 rounded-md font-semibold shadow-md transform hover:scale-105 transition-all duration-300"
-            />
-          </div>
+              <li>
+                <div className="hidden md:block">
+                  <ConnectWallet
+                    btnTitle="Sign in"
+                    className=" py-3 px-6 rounded-md font-semibold shadow-md transform hover:scale-105 transition-all duration-300"
+                  />
+                </div>
+                <div className="md:hidden">
+                  <button onClick={handleToggleMenu} className="text-black">
+                    <HiMenuAlt3 className="w-6 h-6" />
+                  </button>
+                </div>
+                {isMenuOpen && (
+                  <div className="w-full rounded-2xl mt-2 flex flex-row justify-start items-end bg-gray-200">
+                    <div
+                      className={`md:hidden flex flex-col justify-start items-start gap-2 p-4 ${montserrat.className}`}
+                    >
+                      <Link href="/" className="block  hover:font-bold">
+                        Home
+                      </Link>
+                      <Link href="/create" className="block hover:font-bold">
+                        Create
+                      </Link>
 
-          {/* Hamburger Menu */}
-          <div className="md:hidden">
-            <button onClick={handleToggleMenu} className="text-black">
-              <HiMenuAlt3 className="w-6 h-6" />
-            </button>
-          </div>
+                      <Link href="/explore" className="  hover:font-bold">
+                        Explore
+                      </Link>
+                      <Link href="/dashboard" className="  hover:font-bold">
+                        Dashboard
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </li>
+            </ul>
+            <i className="bi bi-list mobile-nav-toggle"></i>
+          </nav>
         </div>
-
-        {/* Responsive Menu */}
-        {isMenuOpen && (
-          <div className="w-full rounded-2xl mt-2 flex flex-row justify-start items-end bg-gray-200">
-            <div
-              className={`md:hidden flex flex-col justify-start items-start gap-2 p-4 ${montserrat.className}`}
-            >
-              <Link href="/" className="block  hover:font-bold">
-                Home
-              </Link>
-              <Link href="/create" className="block hover:font-bold">
-                Create
-              </Link>
-
-              <Link href="/explore" className="  hover:font-bold">
-                Explore
-              </Link>
-              <Link href="/dashboard" className="  hover:font-bold">
-                Dashboard
-              </Link>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+      </header>
+    </>
   );
 };
 

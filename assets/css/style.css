@@ -1,0 +1,1700 @@
+/*--------------------------------------------------------------
+# General hero-bg
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3b8af2;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid deepskyblue;
+  border-top-color: #e2eefd;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: deepskyblue;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #3284f1;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# dashboard
+--------------------------------------------------------------*/
+#dashboard {
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+  background: url("../img/footer-bg.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
+/* table */
+
+#tableimg {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+.coin-table-image {
+  height: 1.2em;
+  width: 1.2em;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.straight {
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Alerts */
+.alert-heading {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+}
+
+.responsive-table {
+  width: 100%;
+  display: block;
+  border-collapse: collapse;
+  background-color: black;
+  color: white;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #333;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.responsive-table tbody tr {
+  background-color: black;
+}
+
+.responsive-table tbody tr:nth-child(even) {
+  background-color: #222;
+}
+
+.responsive-table th,
+.responsive-table td {
+  border-bottom: 1px solid #444;
+}
+
+.responsive-table th:first-child,
+.responsive-table td:first-child {
+  border-left: none;
+}
+
+.responsive-table th:last-child,
+.responsive-table td:last-child {
+  border-right: none;
+}
+@media only screen and (max-width: 768px) {
+  .responsive-table {
+    overflow: scroll;
+  }
+  .responsive-table th,
+  .responsive-table td {
+    min-width: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: black;
+  /* background: url("../img/header-bg.png") top left;
+  background-size: cover;
+  position: relative; */
+  transition: all 0.5s;
+  z-index: 997;
+  height: 86px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#header.fixed-top {
+  height: 80px;
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo a span {
+  color: deepskyblue;
+}
+
+#header .logo img {
+  max-height: 40px;
+}
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar > ul > li {
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar > ul > li > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: deepskyblue;
+  visibility: hidden;
+  width: 0px;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar a:hover:before,
+.navbar li:hover > a:before,
+.navbar .active:before {
+  visibility: visible;
+  width: 100%;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+  color: deepskyblue;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 28px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-weight: 400;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: deepskyblue;
+}
+
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #222222;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(9, 9, 9, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #222222;
+}
+
+.navbar-mobile > ul > li {
+  padding: 0;
+}
+
+.navbar-mobile a:hover:before,
+.navbar-mobile li:hover > a:before,
+.navbar-mobile .active:before {
+  visibility: hidden;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+  color: deepskyblue;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+  color: deepskyblue;
+}
+
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/hero-bg.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  /* background: rgba(255, 255, 255, 0.6); */
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  position: relative;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #222222;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 50px;
+}
+
+#hero h1 span {
+  color: deepskyblue;
+}
+
+#hero h2 {
+  color: #555555;
+  margin: 5px 0 30px 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#hero .btn-get-started {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: deepskyblue;
+}
+
+#hero .btn-get-started:hover {
+  background: #247cf0;
+}
+
+#hero .btn-watch-video {
+  font-size: 16px;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: #222222;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+#hero .btn-watch-video i {
+  color: deepskyblue;
+  font-size: 32px;
+  transition: 0.3s;
+  line-height: 0;
+  margin-right: 8px;
+}
+
+#hero .btn-watch-video:hover {
+  color: deepskyblue;
+}
+
+#hero .btn-watch-video:hover i {
+  color: #3b8af2;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 100vh;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #hero .btn-get-started,
+  #hero .btn-watch-video {
+    font-size: 13px;
+  }
+}
+
+@media (max-height: 500px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f6f9fe;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 20px;
+  margin: 0;
+  background: #e7f1fd;
+  color: deepskyblue;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+
+.section-title h3 {
+  margin: 15px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section-title h3 span {
+  color: deepskyblue;
+}
+
+.section-title p {
+  margin: 15px auto 0 auto;
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .section-title p {
+    width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#smallhero {
+  width: 100%;
+  height: 80vh;
+  background: url("../img/junk4.png") top center;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+#smallhero:before {
+  content: "";
+  background: rgba(13, 20, 26, 0.7);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#smallhero .smallhero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#smallhero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: deepskyblue;
+}
+
+#smallhero h2 {
+  color: #eee;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+#smallhero .btn-get-started {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px 35px 10px 35px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #000;
+  background: deepskyblue;
+  border: 2px solid deepskyblue;
+}
+
+#smallhero .btn-get-started:hover {
+  color: deepskyblue;
+  border-color: deepskyblue;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#smallhero .btn-watch-video {
+  font-size: 16px;
+  display: inline-block;
+  transition: 0.5s;
+  margin-left: 25px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smallhero .btn-watch-video i {
+  line-height: 0;
+  color: #fff;
+  font-size: 32px;
+  transition: 0.3s;
+  margin-right: 8px;
+}
+
+#smallhero .btn-watch-video:hover i {
+  color: deepskyblue;
+}
+@media (min-width: 1024px) {
+  #smallhero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #smallhero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #smallhero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+/*--------------------------------------------------------------
+# nftdetails
+--------------------------------------------------------------*/
+#nftdetails {
+  background-color: black;
+}
+.nftdetails .container {
+  box-shadow: 0px 2px 15px rgba(43, 41, 41, 0.1);
+  padding-bottom: 15px;
+}
+.nftdetails .content {
+  font-size: 15px;
+  color: #d4e2e6;
+}
+
+.nftdetails .content h3 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #98aebd;
+}
+.nftdetails .content h5 {
+  font-weight: 400;
+  font-size: 20px;
+  color: #858584;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.nftdetails .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nftdetails .content ul li {
+  padding-bottom: 10px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.nftdetails .content ul i {
+  font-size: 24px;
+  color: #c8ff00;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.nftdetails .content p:last-child {
+  margin-bottom: 0;
+}
+
+.nftdetails .card {
+  border-radius: 10px;
+  width: 70%;
+  border: 1px solid rgba(29, 42, 53, 0.7);
+
+  background-color: rgba(29, 42, 53, 0.7);
+  margin-bottom: 30px;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  /* transition: all 0.3s ease-in-out; */
+}
+.nftdetails .card-img-top {
+  height: 300px !important;
+  width: 100% !important;
+}
+
+.nftdetails .card-title {
+  color: deepskyblue;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.nftdetails .card-title a {
+  color: #e5e7dc;
+}
+.nftdetails .card-title a:hover {
+  color: deepskyblue;
+}
+
+.nftdetails .card-text {
+  color: #fff;
+  text-align: left;
+}
+
+#buybut {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  border-radius: 20px;
+  width: 70%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: deepskyblue;
+}
+#buybut:hover {
+  background-color: #acd700;
+  color: #464343;
+}
+
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Nft details
+--------------------------------------------------------------*/
+.nftdetails .card-text {
+  color: gray;
+}
+.nftdetails .card-body .card-title {
+  color: whitesmoke;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+#nftdetails .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  color: deepskyblue;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+#provhead {
+  color: #fff;
+  font-weight: 700px;
+  font-size: 40px;
+}
+
+#nftdetails .social-links a:hover {
+  background: deepskyblue;
+  color: #fff;
+  text-decoration: none;
+}
+/* provbut */
+#provbut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: deepskyblue;
+  color: black;
+  border: 2px solid deepskyblue;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Icon styles */
+#provbut .bi-clipboard,
+#provbut .bi-plus {
+  margin-right: 10px;
+}
+
+#provbut:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .providerbut {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #provbut {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #provbut.full-width-button {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+/* provfolbut */
+#provfolbut {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid deepskyblue;
+  border-radius: 20px;
+  color: deepskyblue;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Icon styles */
+#provfolbut .bi-clipboard,
+#provfolbut .bi-plus {
+  margin-right: 10px;
+}
+
+#provfolbut:hover {
+  background-color: deepskyblue;
+  color: black;
+  border: 2px solid deepskyblue;
+}
+
+@media screen and (min-width: 768px) {
+  .providerbut {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  #provfolbut {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #provfolbut .full-width-button {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 20px 0;
+  background-color: #f1f6fe;
+  min-height: 40px;
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs h2 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6c757d;
+  content: "/";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+
+  .breadcrumbs ol {
+    display: block;
+  }
+
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Featured Services
+--------------------------------------------------------------*/
+#featured-services {
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+  background: url("../img/join.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
+.featured-services .icon-box {
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid gray;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.featured-services .row {
+  justify-content: center;
+  padding-top: 10%;
+}
+.featured-services .icon-box::before {
+  content: "";
+  position: absolute;
+  background: transparent;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+/* .featured-services .icon-box:hover::before {
+  background: deepskyblue;
+  top: 0;
+  border-radius: 0px;
+} */
+
+.featured-services .icon {
+  margin-bottom: 15px;
+}
+
+.featured-services .icon i {
+  font-size: 48px;
+  line-height: 1;
+  color: deepskyblue;
+  transition: all 0.3s ease-in-out;
+}
+
+.featured-services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.featured-services .title a {
+  color: #111;
+}
+
+.featured-services .description {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 0;
+}
+
+.featured-services .icon-box:hover .title a,
+.featured-services .icon-box:hover .description {
+  color: #fff;
+}
+
+.featured-services .icon-box:hover .icon i {
+  color: #fff;
+}
+
+#bigtes {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 900px;
+}
+
+#para {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400px;
+}
+
+/*--------------------------------------------------------------
+# nftcollections
+--------------------------------------------------------------*/
+.nftcollections {
+  background-size: cover;
+  padding: 10px 0 30px 0;
+  position: relative;
+}
+
+.nftcollections::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  z-index: 9;
+}
+
+.nftcollections .container,
+.nftcollections .container-fluid {
+  position: relative;
+  z-index: 10;
+}
+
+.nftcollections .card {
+  border-radius: 10px;
+  border: 1px solid rgb(25, 25, 25);
+  background-color: rgb(25, 25, 25);
+  box-shadow: #000;
+  margin-bottom: 30px;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+.nftcollections .card:hover {
+  background-color: rgb(52, 52, 52);
+}
+
+.nftcollections .card-title {
+  color: deepskyblue;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.nftcollections .nfth {
+  color: whitesmoke;
+  background: transparent;
+  border-radius: 20px;
+  border: 2px solid deepskyblue;
+  font-size: larger;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+.nftcollections .nfth:hover {
+  background-color: deepskyblue;
+  color: #000;
+}
+.nftcollections .card-title a {
+  color: #e5e7dc;
+}
+.nftcollections .card-title a:hover {
+  color: deepskyblue;
+}
+
+.nftcollections .card-text {
+  color: #fff;
+  text-align: left;
+}
+
+.nftcollections .card:hover {
+  transform: scale(1.08);
+  color: deepskyblue;
+}
+/* .nftcollections .icon-box:hover {
+  transform: scale(1.08);
+} */
+
+.nftcollections .card-img-top {
+  height: 150px;
+  width: 250px;
+}
+
+.nftcollections .icon-box:hover .title a {
+  color: deepskyblue;
+}
+
+.nftcollections .command {
+  /* background: url("../img/command.png") top center; */
+  background-size: cover;
+  position: relative;
+}
+#collecti {
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#collecti img {
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+}
+#collectinum {
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: deepskyblue;
+  color: #000;
+  text-align: center;
+  font-size: medium;
+  padding-top: 20%;
+  cursor: pointer;
+}
+
+#collectinum:hover {
+  background-color: #a4cb06;
+  color: rgb(35, 34, 34);
+}
+#collectionprofile {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+.price {
+  font-size: 16px;
+}
+
+.price.left {
+  order: 1;
+}
+
+.price.right {
+  order: 2;
+}
+
+@media (max-width: 767px) {
+  .nftcollections .card {
+    min-width: 100%;
+  }
+
+  .nftcollections .icon-boxes {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff rgb(25, 25, 25);
+    margin-bottom: 20px;
+  }
+  .nftcollections .image-container {
+    float: left;
+    width: 40%;
+  }
+
+  .nftcollections .text-container {
+    float: right;
+    width: 60%;
+    padding-top: 15px;
+    padding-right: 50px;
+    text-align: left;
+  }
+
+  .nftcollections .icon-boxes::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .nftcollections .icon-boxes::-webkit-scrollbar-thumb {
+    min-height: 5px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 10px;
+    width: 200px;
+    border: 3px solid #ffffff;
+  }
+
+  .nftcollections .icon-boxes::-webkit-scrollbar-track {
+    background-color: #000;
+    border-radius: 10px;
+  }
+}
+
+/*--------------------------------------------------------------
+#  profile 
+--------------------------------------------------------------*/
+.profile {
+  background: url("../img/footer-bg.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
+.profile .nav-tabs {
+  border: 2px solid gray;
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.profile .nav-link {
+  color: whitesmoke;
+  background: transparent;
+  border: none;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.profile .nav-tabs-bordered .nav-item {
+  flex: 1;
+  display: flex;
+}
+
+.profile .nav-tabs-bordered .nav-item button {
+  flex: 1;
+  position: relative;
+}
+
+.profile .nav-tabs-bordered .nav-item button:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 50%;
+  background-color: black;
+  top: 25%;
+  right: 0;
+}
+
+.profile .nav-tabs-bordered .nav-item:first-child button:before {
+  display: none;
+}
+
+.profile .active {
+  background: deepskyblue !important;
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# join
+--------------------------------------------------------------*/
+
+#join {
+  padding: 50px 0;
+  background: url("../img/join.png") top left;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  font-size: 15px;
+  height: 60vh;
+}
+
+#join h4 {
+  font-size: 50px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+  float: left;
+}
+
+#join p {
+  font-size: 20px;
+  padding: 0;
+  line-height: 0.2;
+  font-weight: 500;
+  float: left;
+  margin-top: 20px;
+}
+
+.joinbut {
+  float: left !important;
+  text-align: left !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10%;
+  padding-left: 10%;
+  color: #fff;
+  background-color: deepskyblue;
+  margin-top: 50px;
+  border-radius: 20px;
+  margin-left: 5%;
+}
+
+.joinbut:hover {
+  background-color: rgb(32, 131, 164);
+  color: #fff;
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+
+.about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 35px;
+}
+
+.about .content ul li:first-child {
+  margin-top: 35px;
+}
+
+.about .content ul i {
+  background: #fff;
+  box-shadow: 0px 6px 15px rgba(16, 110, 234, 0.12);
+  font-size: 24px;
+  padding: 20px;
+  margin-right: 15px;
+  color: deepskyblue;
+  border-radius: 50px;
+}
+
+.about .content ul h5 {
+  font-size: 18px;
+  color: #555555;
+}
+
+.about .content ul p {
+  font-size: 15px;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+  background: url("../img/footer-bg.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
+#footer .footer-newsletter {
+  padding: 50px 0;
+  background: #f1f6fe;
+  text-align: center;
+  font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+
+#footer .footer-newsletter form input[type="email"] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+#footer .footer-newsletter form input[type="submit"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: deepskyblue;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-newsletter form input[type="submit"]:hover {
+  background: #0d58ba;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: url("../img/footer-bg.png") top left;
+  background-size: cover;
+  position: relative;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h3 {
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-contact h3 span {
+  color: deepskyblue;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: deepskyblue;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: deepskyblue;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: deepskyblue;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #3b8af2;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  text-align: center;
+  float: left;
+}
+
+#footer .credits {
+  float: right;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #footer .copyright,
+  #footer .credits {
+    float: none;
+    text-align: center;
+    padding: 2px 0;
+  }
+}

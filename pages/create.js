@@ -117,113 +117,170 @@ const create = () => {
   return (
     <>
       <ToastContainer />
-      <div className="md:py-16 py-12 flex flex-col gap-10">
-        <div className="flex flex-col md:flex-col md:items-center md:justify-center items-center justify-center text-center gap-2">
-          <div className="flex flex-row items-center justify-center gap-2">
-            <h1
-              className={`md:text-4xl text-3xl font-bold ${mainFont.className}`}
-            >
-              How it works ?{" "}
-            </h1>
-          </div>
-          <p className={`md:text-xl text-md ${montserrat.className}`}>
-            Generate new revenue streams through your tested ai-gen prompts
-          </p>
-        </div>
-      </div>
-      <section className="flex flex-col text-center justify-center items-center py-2">
-        <div className="flex flex-col justify-start items-start space-y-4 p-6 rounded-2xl bg-white w-96 ">
-          <label htmlFor="prompts">Enter your proved ai-gen prompts:</label>
-          <div className="flex flex-col gap-1">
-            <input
-              id="prompt"
-              name="prompt"
-              type="text"
-              onChange={handleInput1}
-              className="border rounded p-2 w-full"
-              placeholder="Prompt 1"
-            />
-            <input
-              id="prompt"
-              name="prompt"
-              type="text"
-              onChange={handleInput2}
-              className="border rounded p-2 w-full"
-              placeholder="Prompt 2"
-            />
-            <input
-              id="prompt"
-              name="prompt"
-              type="text"
-              onChange={handleInput3}
-              className="border rounded p-2 w-full"
-              placeholder="Prompt 3"
-            />
-          </div>
-          <button
-            onClick={handleAddInput}
-            className={` text-gray-950 p-2 rounded ${
-              prompts[0] == "" ? `bg-gray-300` : `bg-green-500`
-            } `}
-          >
-            Submit Prompts
-          </button>
-        </div>
-      </section>
-      <section className="flex flex-col text-center justify-center items-center py-2">
-        <div className="flex flex-col justify-start items-start space-y-4 p-6 rounded-2xl bg-white w-96 ">
-          <label htmlFor="images">Upload your previous ai-gen images:</label>
-          {images.map((image, index) => (
-            <input
-              key={index}
-              type="file"
-              id="images"
-              name="images"
-              multiple
-              value={image}
-              onChange={(event) => handleImageChange(event)}
-              className="border rounded p-2 w-full "
-            />
-          ))}
-        </div>
-        {imagesAreUploading && (
-          <div className="mt-2 flex justify-center">
-            <Loading type="spin" color="black" height={25} width={25} />
-          </div>
-        )}
-      </section>
-      <section className="flex flex-col text-center justify-center items-center py-2">
-        <div className="flex flex-col justify-start items-start space-y-4 p-6 rounded-2xl bg-white w-96 ">
-          <label htmlFor="price">Selling price:</label>
-          <input
-            id="price"
-            name="price"
-            type="number"
-            placeholder="Enter price in Dollars $"
-            onChange={handlePrice}
-            className="border rounded p-2 w-full "
-          />
-        </div>
-      </section>
       <section
-        className={`flex flex-col text-center justify-center items-center font-bold ${montserrat.className}`}
+        style={{
+          paddingTop: "8%",
+        }}
+        id="nftcollections"
+        className="nftcollections"
       >
-        <button className="button-register" onClick={registerArtistPrompt}>
-          <svg
-            className="svgIcon"
-            viewBox="0 0 512 512"
-            height="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path>
-          </svg>
-          Register
-        </button>
-        {promptIsRegistring && (
-          <div className="mt-2 flex justify-center">
-            <Loading type="spin" color="black" height={25} width={25} />
+        <div className="container">
+          <div className="flex flex-col md:flex-col md:items-center md:justify-center items-center justify-center text-center gap-2">
+            <div className="flex flex-row items-center justify-center gap-2">
+              <h1
+                style={{ color: "lightblue" }}
+                className={`md:text-4xl text-3xl font-bold ${mainFont.className}`}
+              >
+                How it works ?{" "}
+              </h1>
+            </div>
+            <p
+              style={{ color: "white" }}
+              className={`md:text-xl text-white text-md ${montserrat.className}`}
+            >
+              Generate new revenue streams through your tested ai-gen prompts
+            </p>
           </div>
-        )}
+          <div className="col-xl-12">
+            <div className="p-4">
+              <form>
+                <div className="row gy-4">
+                  <div className="col-md-6">
+                    <label
+                      htmlFor="prompts"
+                      style={{
+                        color: "#ccc",
+                        fontSize: "large",
+                        paddingBottom: "10px",
+                      }}
+                    >
+                      Enter your proved ai-gen prompts:
+                    </label>
+
+                    <div className="flex flex-col gap-1">
+                      <input
+                        id="prompt"
+                        name="prompt"
+                        type="text"
+                        onChange={handleInput1}
+                        className="border rounded p-2 w-full"
+                        placeholder="Prompt 1"
+                      />
+
+                      <input
+                        id="prompt"
+                        name="prompt"
+                        type="text"
+                        onChange={handleInput2}
+                        className="border rounded p-2 w-full"
+                        placeholder="Prompt 2"
+                      />
+                      <input
+                        id="prompt"
+                        name="prompt"
+                        type="text"
+                        onChange={handleInput3}
+                        className="border rounded p-2 w-full"
+                        placeholder="Prompt 3"
+                      />
+                    </div>
+                    <br />
+                    <button
+                      onClick={handleAddInput}
+                      className={` text-gray-950 p-2 rounded ${
+                        prompts[0] == "" ? `bg-gray-300` : `bg-green-500`
+                      } `}
+                    >
+                      Submit Prompts
+                    </button>
+                  </div>
+
+                  <div className="col-md-6">
+                    <label
+                      style={{
+                        color: "#ccc",
+                        fontSize: "large",
+                        paddingBottom: "10px",
+                      }}
+                      htmlFor="price"
+                    >
+                      Selling price:
+                    </label>
+                    <input
+                      id="price"
+                      name="price"
+                      type="number"
+                      placeholder="Enter price in Dollars $"
+                      onChange={handlePrice}
+                      className="border rounded p-2 w-full "
+                    />
+                    <label
+                      style={{
+                        color: "#ccc",
+                        fontSize: "large",
+                        paddingBottom: "10px",
+                      }}
+                      htmlFor="images"
+                    >
+                      Upload your previous ai-gen images:
+                    </label>
+                    {images.map((image, index) => (
+                      <input
+                        key={index}
+                        type="file"
+                        id="images"
+                        name="images"
+                        multiple
+                        value={image}
+                        onChange={(event) => handleImageChange(event)}
+                        className="border rounded p-2 w-full "
+                      />
+                    ))}
+                    {imagesAreUploading && (
+                      <div className="mt-2 flex justify-center">
+                        <Loading
+                          type="spin"
+                          color="black"
+                          height={25}
+                          width={25}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="col-md-12 text-center">
+                    <button
+                      className="joinbut"
+                      onClick={registerArtistPrompt}
+                      style={{ display: "flex", alignItems: "center" }}
+                    >
+                      <svg
+                        className="svgIcon"
+                        viewBox="0 0 512 512"
+                        height="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                        style={{ marginRight: "8px" }}
+                      >
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path>
+                      </svg>
+                      Register
+                    </button>
+                    {promptIsRegistring && (
+                      <div className="mt-2 flex justify-center">
+                        <Loading
+                          type="spin"
+                          color="black"
+                          height={25}
+                          width={25}
+                        />
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
