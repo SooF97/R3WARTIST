@@ -84,12 +84,12 @@ const explore = () => {
                         <span>Artist id:</span>
                         {""}#{prompt[1].toString()}
                       </h5>
-                      <h5 className="card-title">
+                      <h6 className="card-title">
                         <span className="font-bold">Purchased:</span>
                         {""}
                         {prompt[6].toString()}
                         {""}Times
-                      </h5>
+                      </h6>
                     </div>
 
                     <div className="price-container">

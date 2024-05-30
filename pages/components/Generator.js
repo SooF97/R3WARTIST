@@ -38,40 +38,44 @@ export default function Generator() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-2">
-      <h1 className={`md:text-6xl text-4xl font-bold ${mainFont.className}`}>
-        AI Image Generator
-      </h1>
-      <label>Enter prompt to test it:</label>
-      <input
-        type="text"
-        onChange={handleInput}
-        className="h-15 w-100"
-        placeholder="Enter a prompt"
-      />
-      <button
-        className="bg-black text-white text-md hover:bg-gray-900 p-2 m-4 rounded-xl"
-        onClick={handleSubmit}
-      >
-        {loading ? "Generating..." : "Generate Image"}
-      </button>
-
-      {imageUrl && (
-        <div>
-          <h2 className={`md:text-xl text-lg ${montserrat.className}`}>
-            Generated Image:
-          </h2>
-          <Link href={imageUrl} target="_blank">
-            <img
-              src={imageUrl}
-              alt="Generated AI"
-              className="p-4 rounded-2xl"
-              width={250}
-              height={250}
-            />
-          </Link>
+    <>
+      <>
+        <div className="card" style={{ width: "100%" }}>
+          <h1
+            className={`md:text-6xl text-4xl font-bold ${mainFont.className}`}
+          >
+            AI Image Generator
+          </h1>
+          <label>Enter prompt to test it:</label>
+          <input
+            type="text"
+            onChange={handleInput}
+            placeholder="Enter a prompt"
+          />
+          <button className="joinbut full-width-button" onClick={handleSubmit}>
+            {loading ? "Generating..." : "Generate Image"}
+          </button>
+          {imageUrl && (
+            <div>
+              <h2 className={`md:text-xl text-lg ${montserrat.className}`}>
+                Generated Image:
+              </h2>
+              <Link href={imageUrl} target="_blank">
+                <img
+                  src={imageUrl}
+                  alt="Generated AI"
+                  className="card-img-top"
+                  style={{
+                    height: "500px",
+                    width: "100%",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Link>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </>
+    </>
   );
 }

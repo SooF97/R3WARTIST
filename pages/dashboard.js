@@ -38,39 +38,57 @@ const dashboard = () => {
   }
 
   return (
-    <div>
-      <div
-        className="flex flex-col justify-center items-center py-6"
-        onClick={fetchMyData}
+    <>
+      <section
+        style={{
+          paddingTop: "8%",
+        }}
+        id="nftdetails"
+        className="nftdetails"
       >
-        <button className="fancy">
-          <span className="top-key"></span>
-          <span className="text">Fetch my purchased prompts</span>
-          <span className="bottom-key-1"></span>
-          <span className="bottom-key-2"></span>
-        </button>
-      </div>
-      {result.length > 0 && (
-        <div className="flex flex-col justify-center items-center gap-2 text-lg ">
-          <p className="border-current text-gray-950 p-2 ">
-            <span className="font-bold underline">PROMPT N°1: </span>
-            {result[0]}
-          </p>
-          <p className="border-current text-gray-950 p-2 ">
-            <span className="font-bold underline">PROMPT N°2: </span>
-            {result[1]}
-          </p>
-          <p className="border-current text-gray-950 p-2 ">
-            <span className="font-bold underline">PROMPT N°3: </span>
-            {result[2]}
-          </p>
-          <hr className="font-bold"></hr>
-          <section className="mt-4">
-            <Generator />
-          </section>
+        <div className="container">
+          <div
+            className="flex flex-col justify-center items-center py-6"
+            onClick={fetchMyData}
+          >
+            <button className="fancy">
+              <span className="top-key"></span>
+              <span className="text">Fetch my purchased prompts</span>
+              <span className="bottom-key-1"></span>
+              <span className="bottom-key-2"></span>
+            </button>
+          </div>
+          <div id="aboutmore" className="row">
+            <div className="col-lg-6 col-md-6 order-1 order-lg-1 content">
+              {result.length > 0 && (
+                <div>
+                  <div className="headpare">
+                    <h5>PROMPT N°1:</h5>
+
+                    <p>{result[0]}</p>
+                  </div>
+                  <br />
+                  <div className="headpare">
+                    <h5>PROMPT N°2:</h5>
+
+                    <p>{result[1]}</p>
+                  </div>
+                  <br />
+                  <div className="headpare">
+                    <h5>PROMPT N°3:</h5>
+
+                    <p>{result[2]}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="col-lg-6 col-md-6 pt-4 pt-lg-0 order-2 order-lg-2 content">
+              <Generator />
+            </div>
+          </div>
         </div>
-      )}
-    </div>
+      </section>
+    </>
   );
 };
 
