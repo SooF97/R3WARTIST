@@ -92,67 +92,108 @@ const artistPage = () => {
   return (
     <>
       <ToastContainer />
-      <section className="container mx-auto p-4">
-        <div>
-          {fetchingArtist && (
-            <div className="flex justify-center">
-              <Loading type="spin" color="black" height={50} width={50} />
-            </div>
-          )}
-        </div>
-      </section>
-      <div className={`flex flex-col justify-center items-center  `}>
-        {isDataFetched && (
-          <div className="border rounded-lg p-4 bg-gray-100">
-            <h4 className="text-md">
-              <span className="font-bold">Artist Address:</span> {address}
-            </h4>
-            <h4 className="text-md">
-              <span className="font-bold">Artist id:</span> #{artist}
-            </h4>
-            <h4 className="text-md">
-              <span className="font-bold">Price:</span> {price}$
-            </h4>
-            <h4 className="text-md">
-              <span className="font-bold">Purchased:</span> {numberOfPurchase}{" "}
-              Times
-            </h4>
-            <h2 className="font-bold">Previous ai-generative images:</h2>
-            <div className="flex flex-row items-center justify-center space-x-2 mt-2">
-              {images.map((image, index) => (
-                <Link href={image} target="_blank">
-                  <img
-                    key={index}
-                    src={image}
-                    alt="prompt"
-                    className="object-cover rounded"
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col justify-center items-center gap-2 mt-2">
-              <button className="Btn" onClick={purchasePrompt}>
-                Pay {price}$
-                <svg className="svgIcon" viewBox="0 0 576 512">
-                  <path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path>
-                </svg>
-              </button>
-              {isBuying && (
-                <div className="flex justify-center">
-                  <Loading type="spin" color="black" height={25} width={25} />
-                </div>
-              )}
-            </div>
-            {bought && (
-              <div>
-                <Link href="/dashboard">Check your purchased prompts</Link>
+      <section
+        style={{
+          paddingTop: "8%",
+        }}
+        id="nftcollections"
+        className="nftcollections"
+      >
+        <div className="container">
+          <div>
+            {fetchingArtist && (
+              <div className="flex justify-center">
+                <Loading type="spin" color="black" height={50} width={50} />
               </div>
             )}
           </div>
-        )}
-      </div>
+          <br />
+
+          <div className="mynftsec">
+            <div className="row icon-boxes">
+              {isDataFetched && (
+                <div className="col-lg-12 col-md-12 d-flex align-items-stretch">
+                  <div className="card">
+                    <div className="card-body">
+                      <h5 className="card-title">
+                        <span>Artist id:</span>#{artist}
+                      </h5>
+                      <h6 className="card-title">
+                        <span className="font-bold">Purchased:</span>
+                        {numberOfPurchase} Times
+                      </h6>
+                      <p style={{ color: "#ccc" }}>Artist Address: {address}</p>
+                    </div>
+                    <h2 className="font-bold">
+                      Previous ai-generative images:
+                    </h2>
+
+                    <div className="flex space-x-2 mt-2">
+                      {images.map((image, index) => (
+                        <Link href={image} target="_blank">
+                          <img
+                            key={index}
+                            src={image}
+                            alt="prompt"
+                            className="object-cover rounded"
+                            style={{
+                              width: "200px",
+                              height: "200px",
+                              borderRadius: "10px",
+                            }}
+                          />
+                        </Link>
+                      ))}
+                    </div>
+
+                    <div className="price-container">
+                      <span className="price left">
+                        <span style={{ color: "gray" }}>Artist Address:</span>
+                        <br></br>
+                        <span style={{ color: "white" }} id="pricetag">
+                          {""}
+                          {prompt[0].slice(0, 4)}...{prompt[0].slice(-4)}
+                        </span>
+                      </span>
+                      <span className="price right">
+                        <span style={{ color: "gray" }}>Price:</span> <br></br>
+                        <span style={{ color: "white" }} id="pricetag">
+                          {price}$
+                        </span>
+                      </span>
+                    </div>
+                    <div className="flex flex-col justify-center items-center gap-2 mt-2">
+                      <button className="joinbut" onClick={purchasePrompt}>
+                        Pay {price}$
+                        <svg className="svgIcon" viewBox="0 0 576 512">
+                          <path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path>
+                        </svg>
+                      </button>
+                      {isBuying && (
+                        <div className="flex justify-center">
+                          <Loading
+                            type="spin"
+                            color="black"
+                            height={25}
+                            width={25}
+                          />
+                        </div>
+                      )}
+                    </div>
+                    {bought && (
+                      <div>
+                        <Link href="/dashboard">
+                          Check your purchased prompts
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
